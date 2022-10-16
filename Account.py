@@ -8,14 +8,20 @@ class Account:
         self.account_bal = account_bal
 
     def show_menu(self):
-        print(f"{self.name}, Welcome to your Dashboard \n Available Balance = {self.account_bal}\n Date: {date.today()}")
+        print(f"{self.name}, Welcome to your Dashboard \n Available Balance = {self.account_bal}\n Date: {date.today()}\n")
         return "Done"
 
     @property
     def get_balance(self):
-           print(f"Available Balance = {self.account_bal}")
+        print(f"Available Balance = {self.account_bal} \n")
+        return "Done"
+
+    def deposit(self, amount):
+        self.account_bal += amount
+        print(f"Deposit Successful \n Current Balance = {self.account_bal} \n")
+        return "Done"
 
 
-emmanuel = Account("Emmanuel Joseph", "00000000000", "1,000,000")
-print(emmanuel.show_menu())
-print(emmanuel.get_balance)
+emmanuel = Account("Emmanuel Joseph", "00000000000", 1000000)
+
+print(emmanuel.deposit(3000))
